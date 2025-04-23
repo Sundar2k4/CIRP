@@ -19,7 +19,7 @@ const JWT_SECRET_KEY = "deuqwncqwufqurfu"
 dotenv.config();
 app.use(cors());
 const corsOptions = {
-  origin: ['http://localhost:5174'],  // Add your frontend URL here
+  origin: ['http://localhost:5174','https://cirp-frontend.onrender.com'],  // Add your frontend URL here
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true
@@ -31,7 +31,7 @@ const SECRET_KEY = process.env.SECRET_KEY || 'sdwucwecuweuwcu';
 const server = require("http").createServer(app);
 const io = require("socket.io")(server, {
   cors: {
-    origin: "http://localhost:5173",
+    origin: ["http://localhost:5173","https://cirp-frontend.onrender.com"],
     methods: ["GET", "POST"],
     credentials: true
   }
