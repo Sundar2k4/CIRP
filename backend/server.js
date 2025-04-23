@@ -62,11 +62,10 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
-// 🔥 SOCKET.IO FOR GLOBAL CHAT 🔥
 io.on("connection", (socket) => {
   console.log("User connected:", socket.id);
 
-  // Send previous messages on connect
+
   socket.on("getMessages", async () => {
     const messages = await Message.find().sort({ timestamp: 1 });
     socket.emit("chatHistory", messages);
