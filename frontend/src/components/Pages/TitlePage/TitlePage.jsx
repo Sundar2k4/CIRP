@@ -22,7 +22,9 @@ const TitlePage = () => {
   useEffect(() => {
     const fetchDomainData = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/domains/${domainId}`);
+        const res = await fetch(
+          `https://cirp.onrender.com/domains/${domainId}`
+        );
         if (!res.ok) {
           throw new Error("Failed to fetch domain data");
         }
@@ -66,7 +68,7 @@ const TitlePage = () => {
         <div className="domain-image-container">
           {domain.imageurl ? (
             <img
-              src={`http://localhost:5000${domain.imageurl}`}
+              src={`https://cirp.onrender.com${domain.imageurl}`}
               alt={domain.title}
               className="domain-image"
             />

@@ -19,7 +19,7 @@ const Chat = () => {
     setEmail(storedEmail);
 
     // Connect socket only after fetching user data
-    const socket = io("http://localhost:5000", {
+    const socket = io("https://cirp.onrender.com", {
       transports: ["websocket", "polling"],
     });
 
@@ -51,7 +51,7 @@ const Chat = () => {
 
   const sendMessage = () => {
     if (message.trim() !== "" && isConnected) {
-      const socket = io("http://localhost:5000");
+      const socket = io("https://cirp.onrender.com");
       socket.emit("sendMessage", { username, email, message });
       setMessage("");
     }

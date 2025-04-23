@@ -15,7 +15,7 @@ const ProjectPage = () => {
     const fetchIdeaDetails = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/domains/${domainId}/ideas/${ideaId}`
+          `https://cirp.onrender.com/domains/${domainId}/ideas/${ideaId}`
         );
         setIdea(response.data);
         setLoading(false);
@@ -68,7 +68,7 @@ const ProjectPage = () => {
             <h2>📂 Document</h2>
             {idea?.content ? (
               <iframe
-                src={`http://localhost:5000/uploads/${idea.content
+                src={`https://cirp.onrender.com/uploads/${idea.content
                   .split("\\")
                   .pop()}#toolbar=0&view=FitH`}
                 className="document-iframe"
@@ -80,7 +80,7 @@ const ProjectPage = () => {
             {idea?.content && (
               <div className="download-container">
                 <a
-                  href={`http://localhost:5000/uploads/${idea.content
+                  href={`https://cirp.onrender.com/uploads/${idea.content
                     .split("\\")
                     .pop()}`}
                   download

@@ -20,7 +20,7 @@ const AuthorApp = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/addauthor", formData);
+      await axios.post("https://cirp.onrender.com/addauthor", formData);
       alert("Author added successfully!");
       fetchAuthors();
       setFormData({ authorName: "", authorEmail: "", topic: "", bio: "" }); // ✅ Reset topic field
@@ -33,7 +33,7 @@ const AuthorApp = () => {
   // ✅ Fetch Authors
   const fetchAuthors = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/authors");
+      const res = await axios.get("https://cirp.onrender.com/authors");
       setAuthors(res.data);
     } catch (error) {
       console.error("Error fetching authors:", error);

@@ -15,7 +15,7 @@ const UserForm = () => {
   useEffect(() => {
     const fetchDomain = async () => {
       try {
-        const domain = await axios.get("http://localhost:5000/domains");
+        const domain = await axios.get("https://cirp.onrender.com/domains");
         setDomain(domain.data);
       } catch (error) {
         console.error("Error fetching domains", error);
@@ -37,7 +37,7 @@ const UserForm = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/addidea",
+        "https://cirp.onrender.com/addidea",
         formData,
         {
           headers: { "Content-Type": "multipart/form-data" },

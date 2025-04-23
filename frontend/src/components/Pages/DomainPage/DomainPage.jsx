@@ -10,7 +10,7 @@ const DomainPage = () => {
 
   const getdomain = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/domains");
+      const response = await axios.get("https://cirp.onrender.com/domains");
       console.log(response.data);
       setDomains(response.data);
     } catch (error) {
@@ -80,7 +80,7 @@ const DomainPage = () => {
           >
             <div className="top-image">
               <img
-                src={`http://localhost:5000${domain.imageurl}`}
+                src={`https://cirp.onrender.com${domain.imageurl}`}
                 alt={domain.title}
               />
             </div>
@@ -110,9 +110,30 @@ const DomainPage = () => {
               </div>
               {!selectedLevel && (
                 <div className="hover-levels">
-                  <button onClick={(e) => { e.stopPropagation(); handleLevelClick(domain._id, "easy"); }}>Easy</button>
-                  <button onClick={(e) => { e.stopPropagation(); handleLevelClick(domain._id, "medium"); }}>Medium</button>
-                  <button onClick={(e) => { e.stopPropagation(); handleLevelClick(domain._id, "hard"); }}>Hard</button>
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleLevelClick(domain._id, "easy");
+                    }}
+                  >
+                    Easy
+                  </button>
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleLevelClick(domain._id, "medium");
+                    }}
+                  >
+                    Medium
+                  </button>
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleLevelClick(domain._id, "hard");
+                    }}
+                  >
+                    Hard
+                  </button>
                 </div>
               )}
             </div>

@@ -45,11 +45,11 @@ const DomainAdder = () => {
     formDataToSend.append("title", formData.title);
     formDataToSend.append("image", formData.image);
     formDataToSend.append("description", formData.description);
-    formDataToSend.append("topics", JSON.stringify(formData.topics)); // ✅ No change to how topics are sent
+    formDataToSend.append("topics", JSON.stringify(formData.topics));
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/domainform", // ✅ Keeping your route intact
+        "https://cirp.onrender.com/domainform",
         formDataToSend,
         {
           headers: { "Content-Type": "multipart/form-data" },

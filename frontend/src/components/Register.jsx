@@ -12,7 +12,7 @@ const Register = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5000/register", {
+      const res = await axios.post("https://cirp.onrender.com/register", {
         username,
         email,
         password,
@@ -74,10 +74,7 @@ const Register = () => {
           </button>
         </form>
         <p className="toggle-form">
-          Already have an account?{" "}
-          <a href="/login">
-            Login here
-          </a>
+          Already have an account? <a href="/login">Login here</a>
         </p>
       </div>
     </div>
